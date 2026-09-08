@@ -1,0 +1,22 @@
+{
+  "name": "authforge",
+  "version": "1.0.0",
+  "license": "ISC",
+  "author": "Trushal",
+  "private": true,
+  "packageManager": "npm@11.19.0",
+  "workspaces": [
+      "packages/*",
+      "BackEnd",
+      "FrontEnd"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint"
+  },
+  "devDependencies": {
+    "turbo": "2.0.0"
+  }
+}
