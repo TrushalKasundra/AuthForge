@@ -1,62 +1,42 @@
-# ============================================
+
 # Dependencies
-# ============================================
 node_modules/
 FrontEnd/node_modules/
 BackEnd/node_modules/
 packages/shared/node_modules/
 
-# ============================================
 # Build outputs
-# ============================================
 FrontEnd/dist/
 BackEnd/dist/
 packages/shared/dist/
 
-# ============================================
 # Environment variables — never commit secrets
-# ============================================
 BackEnd/.env
 BackEnd/.env.local
 BackEnd/.env.*.local
 
-# ============================================
 # Logs
-# ============================================
 *.log
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
 
-# ============================================
 # TypeScript incremental build cache
-# ============================================
 FrontEnd/tsconfig.app.tsbuildinfo
 FrontEnd/tsconfig.node.tsbuildinfo
 BackEnd/tsconfig.tsbuildinfo
 
-# ============================================
 # Test coverage
-# ============================================
 FrontEnd/coverage/
 BackEnd/coverage/
 
-# ============================================
-# Turbo cache
-# ============================================
 .turbo/
 FrontEnd/.turbo/
 BackEnd/.turbo/
 
-# ============================================
-# Vite cache
-# ============================================
 FrontEnd/node_modules/.vite/
 FrontEnd/node_modules/.vite-temp/
 
-# ============================================
-# Editor & OS
-# ============================================
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
@@ -65,4 +45,3 @@ FrontEnd/node_modules/.vite-temp/
 Thumbs.db
 *.suo
 *.sw?
-.kiro
