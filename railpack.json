@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schema.railpack.com",
+  "steps": {
+    "build": {
+      "commands": [
+        "npm run build -w packages/shared",
+        "npm run build -w BackEnd"
+      ]
+    }
+  },
+  "deploy": {
+    "startCommand": "node BackEnd/dist/index.js"
+  }
+}
