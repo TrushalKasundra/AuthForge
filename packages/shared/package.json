@@ -21,8 +21,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "tsc -b",
+    "dev": "tsc -b --watch",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
