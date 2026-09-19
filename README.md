@@ -20,6 +20,8 @@ A full-stack authentication system built with the PERN stack (PostgreSQL, Expres
 
 ## Features
 
+> **Note:** Some UI elements such as **Social Login** (Google, GitHub), **Forgot Password**, and **Remember Me** are included as visual placeholders to showcase a realistic authentication interface. They are not functional in this implementation. Only **Register**, **Login**, and **Logout** are fully implemented end-to-end.
+
 ### Authentication
 - User registration with email validation
 - Secure login with JWT tokens
