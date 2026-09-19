@@ -3,3 +3,4 @@ buildCommand = "npm install && npm run build -w packages/shared && npm run build
 
 [deploy]
 startCommand = "node BackEnd/dist/index.js"
+healthcheckPath = "/api/health"
