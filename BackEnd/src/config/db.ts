@@ -23,11 +23,14 @@ const connectDB = async (): Promise<void> => {
     await sequelize.authenticate();
     console.log('PostgreSQL Connected successfully');
 
-    // Only sync in development — never alter tables in production
+    // Development: alter tables to match models
+    // Production: create tables if they don't exist, never alter
     if (IS_DEVELOPMENT) {
       await sequelize.sync({ alter: true });
-      console.log('Database synced');
+    } else {
+      await sequelize.sync();
     }
+    console.log('Database synced');
   } catch (error) {
     console.error('PostgreSQL connection error:', error);
     process.exit(1);

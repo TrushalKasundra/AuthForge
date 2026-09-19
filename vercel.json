@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npm run build -w packages/shared && npm run build -w FrontEnd",
+  "outputDirectory": "FrontEnd/dist",
+  "installCommand": "npm install"
+}
