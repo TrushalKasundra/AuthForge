@@ -64,6 +64,6 @@ app.use(errorHandler);
 
 // Start server
 app.listen(PORT, () => {
-  console.log("Testing - 27-11-2026");
+  console.log("Testing/2 - 27-11-2026");
   console.log(`🚀 AuthVault server running on port ${PORT}`);
 });
