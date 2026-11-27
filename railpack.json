@@ -1,6 +1,11 @@
 {
   "$schema": "https://schema.railpack.com",
   "steps": {
+    "install": {
+      "commands": [
+        "npm install"
+      ]
+    },
     "build": {
       "commands": [
         "npm run build -w packages/shared",
@@ -9,6 +14,7 @@
     }
   },
   "deploy": {
-    "startCommand": "node BackEnd/dist/index.js"
+    "startCommand": "node BackEnd/dist/index.js",
+    "healthcheckPath": "/api/health"
   }
 }
