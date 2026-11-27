@@ -2,6 +2,7 @@ import {
   getProfile,
   login,
   logout,
+  logoutAll,
   refreshToken,
   register,
 } from '@/controllers/authController.js';
@@ -23,5 +24,6 @@ router.use(auth);
 // Protected routes
 router.get('/profile', getProfile);
 router.post('/logout', logout);
+router.post('/logout-all', logoutAll);
 
 export default router;

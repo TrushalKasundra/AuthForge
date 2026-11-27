@@ -98,3 +98,19 @@ export const logout = asyncHandler(
     });
   }
 );
+
+// @desc    Logout from all devices - revoke all refresh tokens
+// @route   POST /api/logout-all
+// @access  Private
+export const logoutAll = asyncHandler(
+  async (req: AuthRequest, res: Response): Promise<void> => {
+    const userId = req.user!.id;
+
+    await authService.logoutAll(userId);
+
+    res.status(200).json({
+      success: true,
+      message: 'Logged out from all devices successfully',
+    });
+  }
+);

@@ -58,6 +58,15 @@ export const authApi = createApi({
       }),
       invalidatesTags: ['User'],
     }),
+
+    // Logout all devices mutation
+    logoutAll: builder.mutation<MessageResponse, void>({
+      query: () => ({
+        url: '/logout-all',
+        method: 'POST',
+      }),
+      invalidatesTags: ['User'],
+    }),
   }),
 });
 
@@ -69,4 +78,5 @@ export const {
   useGetProfileQuery,
   useLazyGetProfileQuery,
   useLogoutMutation,
+  useLogoutAllMutation,
 } = authApi;

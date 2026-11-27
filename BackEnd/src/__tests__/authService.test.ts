@@ -142,35 +142,5 @@ describe('AuthService', () => {
     });
   });
 
-  describe('getUserById', () => {
-    it('should throw NotFoundError if user not found', async () => {
-      const { default: User } = await import('@/models/User.js');
-
-      vi.mocked(User.findByPk).mockResolvedValue(null);
-
-      await expect(authService.getUserById(999)).rejects.toThrow(
-        'User not found'
-      );
-    });
-
-    it('should return user without password', async () => {
-      const { default: User } = await import('@/models/User.js');
-
-      const mockUser = {
-        id: 1,
-        name: 'Test User',
-        email: 'test@example.com',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      };
-
-      vi.mocked(User.findByPk).mockResolvedValue(mockUser as never);
-
-      const result = await authService.getUserById(1);
-
-      expect(result.id).toBe(1);
-      expect(result.email).toBe('test@example.com');
-      expect(result).not.toHaveProperty('password');
-    });
-  });
 });
+

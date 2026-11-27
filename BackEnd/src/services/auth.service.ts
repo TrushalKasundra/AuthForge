@@ -2,7 +2,6 @@ import { REFRESH_TOKEN_EXPIRES_IN_MS } from '@/constants/env.js';
 import {
   AuthenticationError,
   ConflictError,
-  NotFoundError,
 } from '@/errors/index.js';
 import RefreshToken from '@/models/RefreshToken.js';
 import User, { type IUserAttributes } from '@/models/User.js';
@@ -139,28 +138,11 @@ class AuthService {
     });
   }
 
-  // Logout from all devices - revoke all refresh tokens for user
+  // Logout all devices - revoke all refresh tokens for user
   async logoutAll(userId: number): Promise<void> {
     await RefreshToken.destroy({
       where: { userId },
     });
-  }
-
-  // Get user by ID
-  async getUserById(id: number): Promise<SafeUser> {
-    const user = await User.findByPk(id);
-
-    if (!user) {
-      throw new NotFoundError('User not found');
-    }
-
-    return {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      createdAt: user.createdAt,
-      updatedAt: user.updatedAt,
-    };
   }
 }
 
